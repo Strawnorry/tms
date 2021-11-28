@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+  <% unless session[:user] %>
+  <!--ログイン前-->
+  <div>
+    <form action="/signin" method="POST">
+      <input name="name" placeholder="メンバー名を入力"><br>
+      <input name="password" type="password" placeholder="パスワードを入力"><br>
+      <input type="submit" value="ログイン">
+    </form>
+    <a href="/sign_up" class="btn btn-default">はじめての時はこちら！</a>
+  </div>
+  <% else %>
+  <!--ログイン後-->
+  
+  <% end %>
+</body>
+</html>
