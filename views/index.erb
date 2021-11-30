@@ -18,7 +18,12 @@
   </div>
   <% else %>
   <!--ログイン後-->
-  
+  <h1>growin</h1>
+    <p>こんにちは、<%= current_user.name %>さん！</p>
+  <div>
+    <p>今のTMS：<%= @percent %></p>
+    <%= %>
+  </div>
   <% end %>
 </body>
 </html>

@@ -2,6 +2,7 @@ require 'bundler/setup'
 Bundler.require
 require 'sinatra/reloader' if development?
 require './models'
+require 'google_drive'
 
 enable :sessions
 
@@ -12,6 +13,10 @@ helpers do
 end
 
 get '/' do
+  sp = session.spreadsheet_by_url(current_user.tms_url)
+  ws = sp.worksheet_by_title(current_user.tms_title)
+  @percent = ws[1, 5]
+  
   erb :index
 end
 
@@ -24,7 +29,8 @@ post '/signup' do
     name: params[:name],
     password: params[:password],
     password_confirmation: params[:password_confirmation],
-    tms_url: params[:tms])
+    tms_url: params[:tms_url],
+    tms_title: params[:tms_title])
   if user.persisted?
     session[:user] = user.id
   end
