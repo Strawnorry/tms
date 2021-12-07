@@ -22,8 +22,10 @@
     <p>こんにちは、<%= current_user.name %>さん！</p>
   <div>
     <p>今のTMS：<%= @percent %></p>
-    <%= %>
-  </div>
+    <img src="images/<%= @image_name %>.jpg">
+  <form action="/signout" method="GET">
+    <input type="submit" value="ログアウト">
+  </form>
   <% end %>
 </body>
 </html>

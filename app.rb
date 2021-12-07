@@ -13,10 +13,13 @@ helpers do
 end
 
 get '/' do
-  sp = session.spreadsheet_by_url(current_user.tms_url)
-  ws = sp.worksheet_by_title(current_user.tms_title)
-  @percent = ws[1, 5]
-  
+  unless current_user == nil then
+    session = GoogleDrive::Session.from_config("config.json")
+    sp = session.spreadsheet_by_url(current_user.tms_url)
+    ws = sp.worksheet_by_title(current_user.tms_title)
+    @percent = ws[1, 5]
+    @image_name = (@percent.to_i / 10).to_s
+  end
   erb :index
 end
 
@@ -42,5 +45,10 @@ post '/signin' do
   if user && user.authenticate(params[:password])
     session[:user] = user.id
   end
+  redirect '/'
+end
+
+get '/signout' do
+  session[:user] = nil
   redirect '/'
 end
