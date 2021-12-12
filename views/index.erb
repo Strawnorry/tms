@@ -27,9 +27,9 @@
     <p>今のTMS：<%= @percent %></p>
     <img src="images/<%= @image_name %>.jpg">
     <button><a href="<%= current_user.tms_url %>">開発を進めよう！</a></button>
-  <% end %>
   <form action="/signout" method="GET">
     <input type="submit" value="ログアウト">
   </form>
+  <% end %>
 </body>
 </html>
