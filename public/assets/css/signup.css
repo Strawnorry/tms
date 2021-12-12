@@ -1,0 +1,26 @@
+.signup {
+    width:100%;
+}
+
+.label {
+    width: 350px;
+    margin: 120px auto;
+    text-aleign: center;
+}
+
+input {
+    background-color: #D7D1C9;
+    border: none;
+    font-size: 16px;
+    margin: 10px;
+    width: 340px;
+    height: 60px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#add {
+    /*margin: 0 auto;*/
+    /*width: 200px;*/
+
+}

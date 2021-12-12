@@ -1,14 +1,22 @@
-<div>
-    <form action="/signup" method="POST">
-            <div>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!--<link rel="stylesheet" href="/assets/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="/assets/css/signup.css">
+</head>
+
+<div class="signup">
+    <form action="/signup" method="POST" class="label">
+            <div >
                 <input name="name" placeholder="メンバー名を入力"><br>
                 <input name="password" type="password" placeholder="パスワードを入力"><br>
                 <input name="password_confirmation" type="password" placeholder="パスワードをもう一度入力"><br>
                 <input name="tms_url" placeholder="TMSのURLを入力"><br>
                 <input name="tms_title" placeholder="TMSの使っているシートのタブ名を入力">
             </div>
-            <div>
-                <input type="submit" value="登録">
+            <div >
+                <input id="add" type="submit" value="登録">
             </div>
     </form>
 </div>

@@ -18,6 +18,7 @@ get '/' do
     sp = session.spreadsheet_by_url(current_user.tms_url)
     ws = sp.worksheet_by_title(current_user.tms_title)
     @percent = ws[1, 5]
+    @purpose = ws[3, 4]
     @image_name = (@percent.to_i / 10).to_s
   end
   erb :index
