@@ -21,14 +21,15 @@
   <% else %>
   <!--ログイン後-->
   <h1>growin</h1>
-    <p>こんにちは、<%= current_user.name %>さん！</p>
+    <p>こんにちは、<%= current_user.name %>！</p>
   <div>
     <p>目標：<%= @purpose %></p>
     <p>今のTMS：<%= @percent %></p>
     <img src="images/<%= @image_name %>.jpg">
+    <button><a href="<%= current_user.tms_url %>">開発を進めよう！</a></button>
+  <% end %>
   <form action="/signout" method="GET">
     <input type="submit" value="ログアウト">
   </form>
-  <% end %>
 </body>
 </html>
