@@ -26,7 +26,7 @@
     <p>目標：<%= @purpose %></p>
     <p>今のTMS：<%= @percent %></p>
     <img src="images/<%= @image_name %>.jpg">
-    <button><a href="<%= current_user.tms_url %>">開発を進めよう！</a></button>
+    <button><a href="<%= current_user.tms_url %>" target="_blank">開発を進めよう！</a></button>
   <form action="/signout" method="GET">
     <input type="submit" value="ログアウト">
   </form>
