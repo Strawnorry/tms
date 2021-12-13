@@ -1,11 +1,16 @@
-.signup {
-    width:100%;
+.base {
+    width: 100%;
+    margin: 0 auto;
 }
 
-.label {
-    width: 350px;
-    margin: 120px auto;
-    text-aleign: center;
+.form {
+    width: 360px;
+    margin: 180px auto 0;
+
+}
+
+.startbtn {
+    margin-top: 16px;
 }
 
 input {
@@ -19,8 +24,13 @@ input {
     padding: 20px;
 }
 
-#add {
-    /*margin: 0 auto;*/
-    /*width: 200px;*/
-
+#start {
+    width: 240px ;
+    margin: 40px 60px;
 }
+
+#start:hover {
+    background-color: #5D454B;
+    color: #D7D1C9;
+}
+

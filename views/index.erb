@@ -3,40 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>growin</title>
-  <!--<link rel="stylesheet" href="/assets/css/bootstrap.min.css">-->
+
   
     <link rel="stylesheet" href="/assets/css/index.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
-    <link rel="icon" href="/images/logos/favicon.ico">
+    <!--<link rel="stylesheet" href="/assets/css/login.css">-->
+    <link rel="icon" href="/images/logos/favicon.png">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
 </head>
+<div class="wrapper">
 <body>
   <% unless session[:user] %>
   <!--ログイン前-->
-  <div class="form">
-    <form action="/signin" method="POST">
-      <input name="name" placeholder="メンバー名を入力"><br>
-      <input name="password" type="password" placeholder="パスワードを入力"><br>
-      <input type="submit" value="ログイン">
-    </form>
-    <a href="/sign_up" class="btn btn-default">はじめての時はこちら！</a>
+
+<div class="login">
+    <div class="loginInfo">
+      <form action="/signin" method="POST">
+        <input name="name" placeholder="メンバー名を入力"><br>
+        <input name="password" type="password" placeholder="パスワードを入力"><br>
+        <input  id="submit" type="submit" value="ログイン">
+      </form><br><br>
+
+      <a href="/sign_up" class="button">はじめての時はこちら！</a>
+      </div>
+    </div>
   </div>
+  
   <% else %>
   <!--ログイン後-->
   <!--<h1>growin</h1>-->
   <div class="title"> <img src="/images/logos/growin.png"></div>
-    <p>こんにちは、<%= current_user.name %>！</p>
-  <div>
-    <p>目標：<%= @purpose %></p>
-    <p>今のTMS：<%= @percent %></p>
-  <form action="/make_history/<%= @percent_number %>" method="POST"> 
-    <input type="submit" value="今の%を保存する">
-  </form>
-    <p>前回のTMS：<%= @present_persent.rate unless @present_persent == nil %>%</p>
-    <img src="images/piki/piki_0<%= @image_name %>.png">
-    <button><a href="<%= current_user.tms_url %>" target="_blank">開発を進めよう！</a></button>
-  <form action="/signout" method="GET">
-    <input type="submit" value="ログアウト">
-  </form>
+    <div class="mojip"><p>こんにちは、<%= current_user.name %>！</p></div>
+    
+ 
+    
+    <div class="chairo">
+      <p>目標：<%= @purpose %></p>
+    </div>
+  <div class="piki">
+     <img src="images/piki/piki_0<%= @image_name %>.png">
+   </div>
+   <div class="board">
+     <h2>達成率</h2>
+        <p>今のTMS：<%= @percent %></p>
+        <form action="/make_history/<%= @percent_number %>" method="POST"> 
+          <input type="submit" value="今の%を保存する">
+        </form>
+        <p>前回のTMS：<%= @present_persent.rate unless @present_persent == nil %>%</p>
+       
+        <button><a href="<%= current_user.tms_url %>" target="_blank">開発を進めよう！</a></button>
+    </div>
+    
+    <div class="logout">
+      <form action="/signout" method="GET">
+       
+          <input type="submit" value="ログアウト">
+      
+      </form>
+  </div>
+  
   <% end %>
+  </div>
+  <footer>
+  <p>Life is Tech! 火曜白金高輪</p>
+</footer>
+ 
 </body>
+
 </html>

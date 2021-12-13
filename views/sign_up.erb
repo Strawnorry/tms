@@ -1,22 +1,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <!--<link rel="stylesheet" href="/assets/css/bootstrap.min.css">-->
-  <link rel="stylesheet" href="/assets/css/signup.css">
+  <title>growin signup</title>
+
+  
+    <link rel="stylesheet" href="/assets/css/signup.css">
+    <!--<link rel="stylesheet" href="/assets/css/login.css">-->
+    <link rel="icon" href="/images/logos/favicon.png">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
 </head>
 
-<div class="signup">
-    <form action="/signup" method="POST" class="label">
-            <div >
+<div class="base">
+    <form action="/signup" method="POST">
+            <div class="form" >
                 <input name="name" placeholder="メンバー名を入力"><br>
                 <input name="password" type="password" placeholder="パスワードを入力"><br>
                 <input name="password_confirmation" type="password" placeholder="パスワードをもう一度入力"><br>
                 <input name="tms_url" placeholder="TMSのURLを入力"><br>
                 <input name="tms_title" placeholder="TMSの使っているシートのタブ名を入力">
             </div>
-            <div >
-                <input id="add" type="submit" value="登録">
+            <div class="form startbtn">
+                <input id="start" type="submit" value="登録">
             </div>
     </form>
 </div>

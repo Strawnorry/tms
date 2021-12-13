@@ -2,11 +2,6 @@ body {
     width: 100%;
 }
 
-.form {
-    width: 480px;
-    margin: 0 auto;
-}
-
 input {
     background-color: #D7D1C9;
     border: none;
