@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>growin</title>
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/login.css">
+  <!--<link rel="stylesheet" href="/assets/css/bootstrap.min.css">-->
+  
     <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="icon" href="/images/logos/favicon.ico">
 </head>
 <body>
   <% unless session[:user] %>
@@ -20,7 +22,8 @@
   </div>
   <% else %>
   <!--ログイン後-->
-  <h1>growin</h1>
+  <!--<h1>growin</h1>-->
+  <div class="title"> <img src="/images/logos/growin.png"></div>
     <p>こんにちは、<%= current_user.name %>！</p>
   <div>
     <p>目標：<%= @purpose %></p>

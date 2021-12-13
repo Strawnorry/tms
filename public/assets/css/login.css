@@ -1,4 +1,19 @@
+body {
+    width: 100%;
+}
+
 .form {
-    width: 980px;
+    width: 480px;
     margin: 0 auto;
+}
+
+input {
+    background-color: #D7D1C9;
+    border: none;
+    font-size: 16px;
+    margin: 10px;
+    width: 340px;
+    height: 60px;
+    border-radius: 20px;
+    padding: 20px;
 }

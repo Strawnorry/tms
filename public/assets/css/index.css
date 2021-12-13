@@ -1,16 +1,45 @@
 *{
     box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 body{
     /* 全体の横幅 */
-    width: 320px;
+    width: 1024px;
     /* 全体を中央寄せ */
-    margin: auto;
+    margin: 0 auto;
     /* 全体の余白 */
     padding: 10px;
-    
     background-image: url(../../images/background.gif);
+    background-size: 100%;
     background-repeat: no-repeat;
+}
+
+.form {
+    /*width: 480px;*/
+    margin: 0 auto;
+}
+
+input {
+    background-color: #D7D1C9;
+    border: none;
+    font-size: 16px;
+    margin: 10px;
+    width: 340px;
+    height: 60px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.btn {
+    background-color: #D7D1C9;
+    border: none;
+    font-size: 16px;
+    margin: 40px;
+    width: 340px;
+    height: 60px;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 /* 数字 */
@@ -38,36 +67,12 @@ h1{
     
     font-size: 52px;
 }
-
-/* ボタン共通 */
-input{
-    border: 0;
-    background: none;
-    display: block;
-    margin: auto;
-    
-    width: 80%;
-    text-align: center;
-    
-    /* 上との余白 */
-    margin-top: 20px;
-    
-    /* 文字の大きさ */
-    font-size: 20px;
+/*タイトル画像*/
+.title{
+    width:800px;
+}
+.title img{
+    display:block;
+    width:300px;
 }
 
-/* プラスボタン */
-input[value="+"]{
-    
-    /* 文字の色 */
-    color: #f9f9f9;
-    
-    /* 背景 */
-    background: #448AFF;
-}
-
-/* マイナスボタン */
-input[value="-"]{
-    color: #f9f9f9;
-    background: #F44336;
-}
