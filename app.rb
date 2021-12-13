@@ -18,8 +18,10 @@ get '/' do
     sp = session.spreadsheet_by_url(current_user.tms_url)
     ws = sp.worksheet_by_title(current_user.tms_title)
     @percent = ws[1, 5]
+    @percent_number = @percent.slice(/\d+/).to_i
+    @present_persent = History.find_by(user_id: current_user.id) 
     @purpose = ws[3, 4]
-    @image_name = (@percent.to_i / 10).to_s
+    @image_name = (@percent_number/10).to_s
   end
   erb :index
 end
@@ -51,5 +53,13 @@ end
 
 get '/signout' do
   session[:user] = nil
+  redirect '/'
+end
+
+post '/make_history/:percent' do
+  History.create(
+    user: current_user,
+    rate: params[:percent]
+    )
   redirect '/'
 end

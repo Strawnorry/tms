@@ -25,7 +25,11 @@
   <div>
     <p>目標：<%= @purpose %></p>
     <p>今のTMS：<%= @percent %></p>
-    <img src="images/<%= @image_name %>.jpg">
+  <form action="/make_history/<%= @percent_number %>" method="POST"> 
+    <input type="submit" value="今の%を保存する">
+  </form>
+    <p>前回のTMS：<%= @present_persent.rate unless @present_persent == nil %>%</p>
+    <img src="images/piki/piki_0<%= @image_name %>.png">
     <button><a href="<%= current_user.tms_url %>" target="_blank">開発を進めよう！</a></button>
   <form action="/signout" method="GET">
     <input type="submit" value="ログアウト">
