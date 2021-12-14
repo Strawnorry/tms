@@ -27,11 +27,20 @@ body{
     margin-left:10%;
 }
 
+.login {
+    margin: 240px auto 0;
+    width: 100%;
+   
+}
+
 
 .loginInfo {
     width: 480px;
     margin: 0 auto;
-    height: 340px;
+    height: 400px;
+    padding: 30px;
+    background-color: rgba(255,250,250,0.5);
+    
 }
 
 form {
@@ -40,25 +49,20 @@ form {
 }
 
 input {
+    display: block;
     background-color: #D7D1C9;
     border: none;
     font-size: 16px;
-    margin: 10px;
+    margin:  30px auto 25px;
     width: 340px;
     border-radius: 20px;
     padding: 20px;
 }
 
-/**/ここら辺です！
-.login {
-    margin: 240px auto 0;
-    width: 100%;
-   
-}
-
-.loginInfo {
-   background-color: rgba(255,250,250,0.5);
-
+#submit {
+    width: 240px;
+    padding: 15px;
+    text-align: center;
 }
 
 #submit:hover {
@@ -66,22 +70,40 @@ input {
     color: #D7D1C9;
 }
 
-.button {
-    background-color: #D7D1C9;
+#button {
+    display: block;
+    /*background-color: #D7D1C9;*/
     border: none;
     font-size: 16px;
-    margin: 40px 70px;
-    width: 340px;
+    margin: 20px auto;
+    width: 210px;
+    padding: 10px 0px 5px;
     border-radius: 20px;
-    padding: 20px;
     text-decoration: none;
+    text-align: center;
     
+    position: relative;
 }
 
-.button:hover {
-    background-color: #5D454B;
+#button:after{
+    position: absolute;
+  bottom: -2px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .2s;
+}
+
+#button:hover::after{
+    /*background-color: #5D454B;*/
+    transform: scale(1, 1);
     color: #D7D1C9;
 }
+
 
 /* 数字 */
 h1{
