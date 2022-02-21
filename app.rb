@@ -23,9 +23,7 @@ get '/' do
     @purpose = ws[3, 4]
     @image_name = (@percent_number/10).to_s
     if @percent_number >= 99.0
-      logger.info current_user.test
       current_user.update(test: 't')
-      logger.info current_user.test
     end
   end
   erb :index
