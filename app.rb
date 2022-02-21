@@ -22,6 +22,9 @@ get '/' do
     @present_persent = History.find_by(user_id: current_user.id) 
     @purpose = ws[3, 4]
     @image_name = (@percent_number/10).to_s
+    if @image_name == 10
+      
+    end
   end
   erb :index
 end

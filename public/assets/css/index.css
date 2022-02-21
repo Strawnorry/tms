@@ -78,11 +78,7 @@ input {
     margin: 20px auto;
     width: 210px;
     padding: 10px 0px 5px;
-    border-radius: 20px;
-    text-decoration: none;
-    text-align: center;
-    
-    position: relative;
+   position: relative;
 }
 
 #button:after{
@@ -172,11 +168,11 @@ h1{
       min-width :500px;
       max-width:700px;
 }
-@media screen and (max-width: 1086px)　{
+@media screen and (max-width: 1086px) {
     .board{
-        overflow:hiddon;
+        overflow:hidden;
     }
-    }
+}
 .piki{
     float:left;
     width:40%;
