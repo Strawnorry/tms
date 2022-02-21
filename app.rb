@@ -14,16 +14,18 @@ end
 
 get '/' do
   unless current_user == nil then
-    session = GoogleDrive::Session.from_config("config.json")
-    sp = session.spreadsheet_by_url(current_user.tms_url)
+    sessionGD = GoogleDrive::Session.from_config("config.json")
+    sp = sessionGD.spreadsheet_by_url(current_user.tms_url)
     ws = sp.worksheet_by_title(current_user.tms_title)
     @percent = ws[1, 5]
     @percent_number = @percent.slice(/\d+/).to_i
     @present_persent = History.find_by(user_id: current_user.id) 
     @purpose = ws[3, 4]
     @image_name = (@percent_number/10).to_s
-    if @image_name == 10
-      
+    if @percent_number >= 99.0
+      logger.info current_user.test
+      current_user.update(test: 't')
+      logger.info current_user.test
     end
   end
   erb :index
@@ -57,6 +59,10 @@ end
 get '/signout' do
   session[:user] = nil
   redirect '/'
+end
+
+get '/edit' do
+  erb :edit
 end
 
 post '/make_history/:percent' do

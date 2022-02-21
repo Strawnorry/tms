@@ -14,7 +14,6 @@ body{
     margin: 0 auto;
     /* 全体の余白 */
     
-    background-image: url(../../images/background-new.gif);
     background-size: 100%;
     background-repeat: no-repeat;
     min-width :800px;
@@ -132,7 +131,7 @@ h1{
     float:left;
     margin:20px;
 }
-.mojip p{
+.mojip {
     text-align: right;
     font-size:20px;
     margin:20px;

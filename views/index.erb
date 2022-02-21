@@ -11,7 +11,12 @@
     <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
 </head>
 <div class="wrapper">
-<body>
+<body style="
+<% if current_user.nil? %>background-image: url(../../images/background-new.gif);
+<% else %>
+<% if current_user.test == 't' %>background-image: url(../../images/background-hanabi.gif);
+<% else %>background-image: url(../../images/background-new.gif);<% end %><% end %>
+">
   <% unless session[:user] %>
   <!--ログイン前-->
 
@@ -32,8 +37,13 @@
   <% else %>
   <!--ログイン後-->
   <!--<h1>growin</h1>-->
+  <% if current_user.test == 't' %>
+  <div class="title"> <img src="/images/logos/growinkirakira.png"></div>
+  <% else %>
   <div class="title"> <img src="/images/logos/growin.png"></div>
-    <div class="mojip"><p>こんにちは、<%= current_user.name %>！</p></div>
+  <% end %>
+    <div class="mojip"><p>こんにちは、<%= current_user.name %>！</p>
+    <a href="/edit">編集する</a></div>
     <div class="chairo">
       <p>目標：<%= @purpose %></p>
     </div>
@@ -58,7 +68,6 @@
       
       </form>
   </div>
-  
   <% end %>
   </div>
   <footer>
