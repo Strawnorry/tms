@@ -1,4 +1,26 @@
+<head>
+  <meta charset="UTF-8">
+  <title>growin signup</title>
+
+  
+    <link rel="stylesheet" href="/assets/css/signup.css">
+    <!--<link rel="stylesheet" href="/assets/css/login.css">-->
+    <link rel="icon" href="/images/logos/favicon.png">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+</head>
 <body style="background-image: url(../../images/background-new.gif);">
-<p>編集画面 coming soon</p>
+<div class="base">
+    <form action="/edit" method="POST">
+            <div class="form" >
+                <h2>情報編集</h2>
+                <input name="name" placeholder="メンバー名を変更">
+                <input name="tms_url" placeholder="TMSのURLを変更">
+                <input name="tms_title" placeholder="TMSの使っているシートのタブを変更">
+            </div>
+            <div class="form startbtn">
+                <input id="start" type="submit" value="変更">
+            </div>
+    </form>
+</div>
 <a href='/'>メインに戻る</a>
 </body>

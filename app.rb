@@ -63,6 +63,25 @@ get '/edit' do
   erb :edit
 end
 
+post '/edit' do
+  if params[:name].present?
+  current_user.update(
+    name: params[:name])
+  end
+  if params[:tms_url].present?
+  current_user.update(
+    name: params[:tms_url])
+  end
+  if params[:tms_title].present?
+  current_user.update(
+    name: params[:tms_title])
+  end
+  # if user.persisted?
+  #   session[:user] = user.id
+  # end
+  redirect '/'
+end
+
 post '/make_history/:percent' do
   History.create(
     user: current_user,
